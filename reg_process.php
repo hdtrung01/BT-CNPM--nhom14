@@ -35,5 +35,6 @@
         echo '<a href="register.php">Thử lại</a>';
         echo '</div>';
     }
+    header("Location:home_user.php");
 ?>
 <?php include 'foot.php' ?>

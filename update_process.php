@@ -15,5 +15,5 @@
     $result=mysqli_query($conn, $sql);
 
     copy($file_tmp,'img/'.$file_name.'');
-   // header("Location:index.php");
+    header("Location:index_admin.php");
 ?>
