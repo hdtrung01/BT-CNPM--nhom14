@@ -8,7 +8,7 @@
     <form class="d-flex">
         <a class="nav-link" href="donhang.php"> <i class="fas fa-clipboard-list" style="color:white"></i></i>Đơn hàng</a>
         <a class="nav-link" href="giohang.php"> <i class="fas fa-cart-plus" style="color:white"></i>Giỏ hàng</a>
-        <a class="nav-link" href="login.php">Đăng nhập</a>
+        <a class="nav-link" href="index.php">đăng xuất</a>
     </form>
     </div>
   </div>
