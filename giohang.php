@@ -26,7 +26,7 @@
   if (!$conn){
       die("Ko ket noi duoc");
   };
-  $sql="SELECT * FROM sanpham WHERE MaSP IN (SELECT MaSP FROM `giohang` WHERE username = '$username') ";
+  $sql="SELECT * FROM giohang INNER JOIN sanpham on sanpham.MaSP = giohang.MaSP WHERE username = '$username'";
   $result=mysqli_query($conn, $sql);
 ?>
 <!-- poster -->
@@ -98,13 +98,14 @@
         <td>'.$row['TenSP'].'</td>
         <td><img src="img/'.$row['anh'].'" style="height:50px"></td>
         <td>'.$row['Gia'].'</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <td>'.$row['SoLuong'].'</td>
+        <td>'.$row['Gia']*$row['SoLuong'].'</td>
       </tr>';
       }
     }
     echo '    </tbody>
     </table>';
+    echo '<a href="thanhtoan.php" style="float: right; margin-right: 20%;" class="btn btn-success">Thanh Toán Ngay</a>';
     ?>
 </div>
 
