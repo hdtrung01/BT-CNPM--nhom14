@@ -111,7 +111,7 @@ $('#add').click(function() {$.ajax({
         type: 'post',
   <?php
 	echo 
-"data:'".$id."'";
+"id:'".$id."'";
 	?>
 ,success: function(){
        }
