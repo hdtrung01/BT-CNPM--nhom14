@@ -43,6 +43,16 @@
         include 'foot.php';
         return;
     }
+    $sql = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result) != 0){
+        echo '<div style="text-align:center">';
+        echo '<h1>Tên đăng nhập đã tồn tại.</h1>';
+        echo '<a href="register.php">Thử lại</a>';
+        echo '</div>';
+        include 'foot.php';
+        return;
+    }
     if (strlen($pass1) < 6){
         echo '<div style="text-align:center">';
         echo '<h1>Mật Khẩu Quá Ngắn.</h1>';
@@ -55,28 +65,17 @@
     $sql = "SELECT * FROM user WHERE username LIKE $username";
     $result = mysqli_query($conn,$sql);
     if (!$result){
-        if ($pass1 != $pass2){
-            echo '<div style="text-align:center">';
-            echo '<h1>2 mật khẩu không khớp.</h1>';
-            echo '<a href="register.php">Thử lại</a>';
-            echo '</div>';
-        }else{
 
             $pass_md5 = md5($pass1);
             $sql = "INSERT INTO user VALUES ('$username','$pass_md5','$email', '0')";
             $result = mysqli_query($conn, $sql);
-            if (!$result){
-                echo '<div style="text-align:center">';
-                echo '<h1>Tên đăng nhập đã tồn tại.</h1>';
-                echo '<a href="register.php">Thử lại</a>';
-                echo '</div>';
-            }
-        }
     }else{
         echo '<div style="text-align:center">';
         echo '<h1>Tên người dùng phải có ký tự chữ.</h1>';
         echo '<a href="register.php">Thử lại</a>';
         echo '</div>';
+        include 'foot.php';
+        return;
     }
     header("Location:home_user.php");
 ?>
