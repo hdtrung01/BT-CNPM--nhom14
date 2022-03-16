@@ -1,4 +1,4 @@
-﻿<?php include 'head.php' ?>
+<?php include 'head.php' ?>
 <?php include 'head.php' ?>
 <!-- Trang chủ -->
 <!-- navbar -->
@@ -16,14 +16,17 @@
 
 <!-- CSDL -->
 <?php
-  $id = $_GET['id'];
+  session_start();
+  if(!isset($_SESSION["username"])){
+    header("Location:./login.php");
+  }
+  $username = $_SESSION["username"];
   include 'head.php';
   $conn = mysqli_connect('localhost','root','','shop');
   if (!$conn){
       die("Ko ket noi duoc");
-  }
-
-  $sql="SELECT * FROM sanpham where MaSP = '$id'";
+  };
+  $sql="SELECT * FROM sanpham WHERE MaSP IN (SELECT MaSP FROM `giohang` WHERE username = '$username') ";
   $result=mysqli_query($conn, $sql);
 ?>
 <!-- poster -->
@@ -76,23 +79,32 @@
 <!-- Danh sach sach' -->
 <h3 class="sanpham">Sản Phẩm:</h3>
   <?php
+    echo '<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Sản Phẩm</th>
+        <th scope="col"></th>
+        <th scope="col">Giá</th>
+        <th scope="col">Số Lượng</th>
+        <th scope="col">Thành Tiền</th>
+      </tr>
+    </thead>
+    <tbody>';
     if (mysqli_num_rows($result)>0){
       while ($row=mysqli_fetch_assoc($result)){
-	echo '<div class="container">
-	  <div class="row">
-	  <div class="col">;
-	  <img src="img/'.$row['anh'].'" style="height:500px">;
-	  </div>
- 	  <div class="col">
-	  <h5 class="card-title">'.$row['TenSP'].'</h5>
-	  <div style="color:#ee4d2d;font-size:50px;">'.$row['Gia'].'</div>
-	  </br>
-	  <a href="themgiohang.php?id='.$row['MaSP'].'" class="btn btn-success" >Mua ngay</a>
-	  <a class="btn btn-primary" id = "add" >Thêm vào giỏ hàng</a>
-	  </div>
-	  </div></div>';
+    echo '<tr>
+        <th scope="row"></th>
+        <td>'.$row['TenSP'].'</td>
+        <td><img src="img/'.$row['anh'].'" style="height:50px"></td>
+        <td>'.$row['Gia'].'</td>
+        <td>@mdo</td>
+        <td>@mdo</td>
+      </tr>';
       }
     }
+    echo '    </tbody>
+    </table>';
     ?>
 </div>
 
@@ -107,11 +119,11 @@
 </div>
 <script>
 $('#add').click(function() {$.ajax({
-        type: "GET",
-        url: "themgiohang.php",
+        url: "giohang.php",
+        type: 'post',
   <?php
 	echo 
-"data:{id:'".$id."'}";
+"data:'".$id."'";
 	?>
 ,success: function(){
        }
