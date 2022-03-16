@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 14, 2022 lúc 02:52 PM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.10
+-- Host: 127.0.0.1
+-- Generation Time: Mar 16, 2022 at 09:35 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,42 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `shop`
+-- Database: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sanpham`
+-- Table structure for table `giohang`
+--
+
+CREATE TABLE `giohang` (
+  `username` varchar(50) NOT NULL,
+  `MaSP` varchar(10) NOT NULL,
+  `SoLuong` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `giohang`
+--
+
+INSERT INTO `giohang` (`username`, `MaSP`, `SoLuong`) VALUES
+('hai123', 'sp002', 1),
+('hai123', 'sp002', 1),
+('hai123', 'sp002', 1),
+('hai123', '', 1),
+('hai123', 'sp004', 1),
+('hai123', '', 1),
+('hai123', 'sp004', 1),
+('hai123', '', 1),
+('hai123', 'qưeqw', 1),
+('hai123', '', 1),
+('hai123', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -37,7 +66,7 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `sanpham`
+-- Dumping data for table `sanpham`
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `LoaiSP`, `Gia`, `anh`, `mota`) VALUES
@@ -50,7 +79,7 @@ INSERT INTO `sanpham` (`MaSP`, `TenSP`, `LoaiSP`, `Gia`, `anh`, `mota`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -61,27 +90,29 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`username`, `Password`, `Email`, `permission`) VALUES
 ('', 'hdtrung01@gmail.com', '202cb962ac59075b964b07152d234b70', 0),
 ('admin', '21232F297A57A5A743894A0E4A801FC3', 'Shopquanao@gmail.com', 1),
 ('áds', '8277e0910d750195b448797616e091ad', 'â', 0),
-('simple', '202cb962ac59075b964b07152d234b70', 'simple@gmail.com', 0);
+('hai123', '70a0f9894d2df18c2507d231a94caee8', 'hai123', 0),
+('simple', '202cb962ac59075b964b07152d234b70', 'simple@gmail.com', 0),
+('thnagcho147c', '70a0f9894d2df18c2507d231a94caee8', 'hai123', 0);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `sanpham`
+-- Indexes for table `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`MaSP`);
 
 --
--- Chỉ mục cho bảng `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
