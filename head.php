@@ -13,6 +13,6 @@
     <link href = "https: //fonts.googleapis.com/css2? family = Roboto: wght @ 100; 300; 400; 500; 700 & display = swap "rel =" stylesheet ">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <title>SHOP Quần áo!!</title>
+    <title>Thời Trang N14</title>
   </head>
   <body>
