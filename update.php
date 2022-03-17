@@ -26,8 +26,8 @@
         <div class="invalid-feedback">Vui Lòng chọn 1 tệp</div>
         </div>
         <button  style="margin-top:4%"type="submit" class="btn btn-primary" name='sbmUpdate'>Thêm</button>
-
     </form>
+    <a href="home_admin.php"><button class="back">Trở Về Trang Admin</button></a>
 </div>
 
 <?php include 'foot.php' ?>
