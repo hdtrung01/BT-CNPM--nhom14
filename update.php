@@ -1,9 +1,9 @@
 <?php include 'head.php' ?>
 
-<div class="container shadow" style="margin: auto; margin-top:3%; padding: 100px;">
+<div class="container shadow">
 
     <h1 class = "bg-info text-center" style="color:White">Thêm sản phẩm mới</h1>
-    <form enctype="multipart/form-data" action="update_process.php" method = "POST">
+    <form enctype=" multipart/form-data" action="update_process.php" method = "POST">
         
         <label class="form-label">Tên sản phẩm:</label>
         <input type="text" class="form-control" name="tensanpham">
