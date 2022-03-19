@@ -1,4 +1,6 @@
-<?php include 'head.php' ?>
+<?php
+session_start();
+include 'head.php' ?>
 
 <div class="row container border shadow" style="margin: auto; margin-top:3%">
 

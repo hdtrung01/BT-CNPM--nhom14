@@ -1,23 +1,12 @@
-﻿<?php include 'head.php' ?>
-<?php include 'head.php' ?>
+﻿<?php
+session_start();
+include 'head.php' ?>
 <!-- Trang chủ -->
 <!-- navbar -->
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a href="index.php"><i class="fas fa-book-open fa-3x"></i></a>
-    <form class="d-flex">
-        <a class="nav-link" href="donhang.php"> <i class="fas fa-clipboard-list" style="color:white"></i></i>Đơn hàng</a>
-        <a class="nav-link" href="giohang.php"> <i class="fas fa-cart-plus" style="color:white"></i>Giỏ hàng</a>
-        <a class="nav-link" href="login.php">Đăng nhập</a>
-    </form>
-    </div>
-  </div>
-</nav>
 
 <!-- CSDL -->
 <?php
   $id = $_GET['id'];
-  include 'head.php';
   $conn = mysqli_connect('localhost','root','','shop');
   if (!$conn){
       die("Ko ket noi duoc");
@@ -113,7 +102,10 @@ $('#add').click(function() {$.ajax({
 	echo 
 "data:{id:'".$id."'}";
 	?>
-,success: function(){
+,success: function(data, textStatus, xhr){
+        if(xhr.status == 200){
+          $('#add').html('Đã Thêm Vào Giỏ Hàng') 
+        }
        }
    });
 });

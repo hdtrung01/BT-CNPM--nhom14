@@ -1,5 +1,6 @@
-<?php include 'head.php' ?>
-<?php include 'head.php' ?>
+<?php
+session_start();
+include 'head.php' ?>
 <!-- Trang chủ -->
 <!-- navbar -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -15,7 +16,6 @@
 
 <!-- CSDL -->
 <?php
-  include 'head.php';
   $conn = mysqli_connect('localhost','root','','shop');
   if (!$conn){
       die("Ko ket noi duoc");

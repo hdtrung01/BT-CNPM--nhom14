@@ -1,4 +1,6 @@
-<?php include 'head.php' ?>
+<?php
+session_start();
+ include 'head.php' ?>
 
 <div class="container shadow">
 

@@ -5,7 +5,6 @@
   }
   $username = $_SESSION["username"];
   $id = $_GET['id'];
-  include 'head.php';
   $conn = mysqli_connect('localhost','root','','shop');
   if (!$conn){
       die("Ko ket noi duoc");
