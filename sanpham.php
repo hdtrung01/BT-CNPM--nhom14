@@ -179,9 +179,47 @@
                             <div class="home-product">
                                 <div class="grid__row">
                                     <!--Product item-->
-                                    <div class="grid__column-2-4">    
-                                       <!-- suất dữ liệu -->
-                                 </div>
+                                    <?php
+                                    if (mysqli_num_rows($result)>0){
+                                        while ($row=mysqli_fetch_assoc($result)){
+                                        echo '<div class="grid__column-2-4">                               
+                                        <a href="mua.php?id='.$row['MaSP'].'" class="home-product-item">
+                                            <div href="mua.php?id='.$row['MaSP'].'" class="home-product-item__img" style="background-image: url(./img/'.$row['anh'].');"></div>
+                                            <h4 class="home-product-item__name">'.$row['TenSP'].'</h4>
+                                            <div class="home-product-item__price">
+                                                <Span class="home-product-item__price-old">'.number_format($row['Gia']).'</Span>
+                                                <Span class="home-product-item__price-current">'.number_format($row['Gia']).'</Span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <span class="home-product-item__Like home-product-item__Like--liked">
+                                                    <i class="home-product-item__Like-icon-no fa-regular fa-heart"></i>
+                                                    <i class="home-product-item__Like-icon-yes fa-solid fa-heart"></i>
+                                                </span>
+                                                <div class="home-product-item__ratting">
+                                                    <i class="home-product-item__star-gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star-gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star-gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star-gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="home-product-item__origin">
+                                                <span class="home-product-item__brand">Gucci</span>
+                                                <span class="home-product-item__origin-name">Việt Nam</span>
+                                            </div>
+                                            <div class="home-product-item__favourite">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>Yêu Thích</span> 
+                                            </div>
+                                            <div class="home-product-item__sale-off">
+                                                <span class="home-product-item__sale-off-percent">10%</span>
+                                                <span class="home-product-item__sale-off-label">Giảm</span>
+                                            </div>
+                                        </a>
+                                    </div>';
+                                        }
+                                    }
+                                    ?>
                             </div>
                             <ul class="pagination home-product__pagination">
                                 <li class="pagination-item">

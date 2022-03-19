@@ -3,13 +3,13 @@
 <div class="container shadow">
 
     <h1 class = "bg-info text-center" style="color:White">Thêm sản phẩm mới</h1>
-    <form enctype=" multipart/form-data" action="update_process.php" method = "POST">
+    <form action="update_process.php" method = "POST" enctype="multipart/form-data">
         
         <label class="form-label">Tên sản phẩm:</label>
         <input type="text" class="form-control" name="tensanpham">
 
         <label class="form-label">Mã sản phẩm:</label>
-        <input type="text" class="form-control" name="masanpham">
+        <input type="text" class="form-control" name="masanpham" maxlength="5">
 
         <label class="form-label">loại:</label>
         <input type="text" class="form-control" name="loai">
@@ -22,10 +22,10 @@
 
         <label class="form-lable">Ảnh Minh Hoạ</label>
         <div >
-        <input type="file" class="form-control" name="anh" required>
+        <input type="file" class="form-control" name="anh" id = "anh" required>
         <div class="invalid-feedback">Vui Lòng chọn 1 tệp</div>
         </div>
-        <button  style="margin-top:4%"type="submit" class="btn btn-primary" name='sbmUpdate'>Thêm</button>
+        <button  style="margin-top:4%"type="submit" class="btn btn-primary" name='submit'>Thêm</button>
     </form>
     <a href="home_admin.php"><button class="back">Trở Về Trang Admin</button></a>
 </div>
