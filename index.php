@@ -84,7 +84,7 @@
               <div class="header--fomt">
                 <div class="header_0">
                         <div class="header_2">
-                          <a href="" class="header_2-link">Sản Phẩm</a>
+                          <a href="sanpham.php" class="header_2-link">Sản Phẩm</a>
                           <a href="" class="header_2-link">Hướng Dẫn Chọn Size</a>
                           <a href="" class="header_2-link">Liên Hệ</a>
                         </div>   
