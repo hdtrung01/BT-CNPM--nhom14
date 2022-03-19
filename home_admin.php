@@ -1,4 +1,6 @@
-<?php include 'head.php';?>
+<?php
+ session_start();
+ include 'head.php';?>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
    <div class="container-fluid">
                     <div class="header_1">
