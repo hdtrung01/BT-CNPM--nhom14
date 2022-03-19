@@ -2,9 +2,10 @@
 session_start();
 include 'head.php' ?>
     <?php
+    if(isset($page)){
     $page = $_GET['page'];
+    }else $page = 1;
     $item = ($page-1)*10;
-    include 'head.php';
     $conn = mysqli_connect('localhost','root','','shop');
     if (!$conn){
         die("Ko ket noi duoc");
