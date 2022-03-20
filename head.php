@@ -109,11 +109,27 @@
                           <form class="d-flex">
                               <a class="nav-link" href="donhang.php"> <i class="fas fa-clipboard-list" style="color:white"></i></i>Đơn hàng</a>
                               <a class="nav-link" href="giohang.php"> <i class="fas fa-cart-plus" style="color:white"></i>Giỏ hàng</a>
-<?php
-   if(!isset($_SESSION["username"])){
-    echo '<a class="nav-link nav-link-3" href="login.php"><i class="fa-solid fa-child"></i>Đăng nhập</a>';
-   }else echo '<a class="nav-link nav-link-3" href="home_user.php"><i class="fa-solid fa-child"></i>'.$_SESSION["username"].'</a>';
-?>
+     <li class="nav-link nav-link-3">
+        <?php
+        if(!isset($_SESSION["username"])){
+            echo '<a class="nav-link nav-link-3" href="login.php"><i class="fa-solid fa-child"></i>Tài Khoản</a>';
+        }else echo '<a class="nav-link nav-link-3"><i class="fa-solid fa-child"></i>'.$_SESSION["username"].'</a>';
+        ?>
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item">
+                                    <a href="">Thông Tin</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">Đơn Mua</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">Cài Đặt</a>
+                                </li>
+                                <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                    <a href="">Đăng Xuất</a>
+                                </li>
+                            </ul>
+     </li>
                             </form>
                        </div>
                   </div>
