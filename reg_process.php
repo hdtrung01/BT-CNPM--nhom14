@@ -13,7 +13,7 @@
         include 'head.php';
         echo '<div style="text-align:center">';
         echo '<h1>Sai Email.</h1>';
-        echo '<a href="register.php">Thử lại</a>';
+        echo '<a href="login.php">Thử lại</a>';
         echo '</div>';
         include 'foot.php';
         return;
