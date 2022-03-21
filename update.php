@@ -1,8 +1,12 @@
 <?php
-session_start();
- include 'head.php' ?>
-
-<div class="container shadow">
+ session_start();
+ if(!isset($_SESSION["username"])){
+   header("Location:./login.php");
+ }
+ include 'head.php';
+ if($_SESSION["username"] != 'admin'){
+    echo '<h1>Bạn không phải quản trị viên</h1>';
+ }else{ echo '<div class="container shadow">
 
     <h1 class = "bg-info text-center" style="color:White">Thêm sản phẩm mới</h1>
     <form action="update_process.php" method = "POST" enctype="multipart/form-data">
@@ -27,9 +31,10 @@ session_start();
         <input type="file" class="form-control" name="anh" id = "anh" required>
         <div class="invalid-feedback">Vui Lòng chọn 1 tệp</div>
         </div>
-        <button  style="margin-top:4%"type="submit" class="btn btn-primary" name='submit'>Thêm</button>
+        <button  style="margin-top:4%"type="submit" class="btn btn-primary" name="submit">Thêm</button>
     </form>
     <a href="home_admin.php"><button class="back">Trở Về Trang Admin</button></a>
-</div>
-
-<?php include 'foot.php' ?>
+</div>';
+ }
+include 'foot.php'
+?>

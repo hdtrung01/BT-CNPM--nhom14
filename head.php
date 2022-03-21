@@ -112,9 +112,9 @@
      <li class="nav-link nav-link-3">
         <?php
         if(!isset($_SESSION["username"])){
-            echo '<a class="nav-link nav-link-3" href="login.php"><i class="fa-solid fa-child"></i>Tài Khoản</a>';
-        }else echo '<a class="nav-link nav-link-3"><i class="fa-solid fa-child"></i>'.$_SESSION["username"].'</a>';
-        ?>
+            echo '<a class="nav-link nav-link-3" href="login.php"><i class="fa-solid fa-child"></i>Đăng Nhập</a>';
+        }else echo ('<a class="nav-link nav-link-3"><i class="fa-solid fa-child"></i>'.$_SESSION["username"].'</a>
+        
                             <ul class="header__navbar-user-menu">
                                 <li class="header__navbar-user-item">
                                     <a href="">Thông Tin</a>
@@ -126,9 +126,10 @@
                                     <a href="">Cài Đặt</a>
                                 </li>
                                 <li class="header__navbar-user-item header__navbar-user-item--separate">
-                                    <a href="">Đăng Xuất</a>
+                                    <a href="logout.php">Đăng Xuất</a>
                                 </li>
-                            </ul>
+                            </ul>');
+        ?>
      </li>
                             </form>
                        </div>

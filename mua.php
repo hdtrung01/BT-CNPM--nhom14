@@ -75,8 +75,11 @@ include 'head.php' ?>
  	  <div class="col">
 	  <h5 class="card-title">'.$row['TenSP'].'</h5>
 	  <div style="color:#ee4d2d;font-size:50px;">'.$row['Gia'].'</div>
+    <a>Số Lượng</a>
+    <input type="number" id="quantity" name="quantity" min="1" max="20" value="1">
 	  </br>
-	  <a href="themgiohang.php?id='.$row['MaSP'].'" class="btn btn-success" >Mua ngay</a>
+    </br>
+	  <a id = "mua" class="btn btn-success" >Mua ngay</a>
 	  <a class="btn btn-primary" id = "add" >Thêm vào giỏ hàng</a>
 	  </div>
 	  </div></div>';
@@ -95,16 +98,31 @@ include 'head.php' ?>
     <h5 style="margin:50px">BTL Công nghệ phần mềm</h5>
 </div>
 <script>
+$('#mua').click(function() {$.ajax({
+        type: "GET",
+        url: "themgiohang.php",
+  <?php
+	echo 
+"data:{id:'".$id."' , sl:$('#quantity').val() , loai:'add'} ";
+	?>
+,success: function(data, textStatus, xhr){
+        if(xhr.status == 200){
+          window.location.href = 'giohang.php';
+        }
+       }
+   });
+});
 $('#add').click(function() {$.ajax({
         type: "GET",
         url: "themgiohang.php",
   <?php
 	echo 
-"data:{id:'".$id."'}";
+"data:{id:'".$id."' , sl:$('#quantity').val() , loai:'add'} ";
 	?>
 ,success: function(data, textStatus, xhr){
         if(xhr.status == 200){
-          $('#add').html('Đã Thêm Vào Giỏ Hàng') 
+          $('#add').html('Đã Thêm Vào Giỏ Hàng') ;
+          $('#add').off('click');
         }
        }
    });

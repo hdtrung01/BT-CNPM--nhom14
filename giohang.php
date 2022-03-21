@@ -1,7 +1,5 @@
 <?php
 session_start();
-include 'head.php' ?>
-<?php
    if(!isset($_SESSION["username"])){
      header("Location:./login.php");
     }
@@ -12,7 +10,7 @@ include 'head.php' ?>
   };
   $sql="SELECT * FROM giohang INNER JOIN sanpham on sanpham.MaSP = giohang.MaSP WHERE username = '$username'";
   $result=mysqli_query($conn, $sql);
-  
+  include 'head.php'
 ?>
 <!-- poster -->
 <!-- Slide -->
@@ -28,6 +26,7 @@ include 'head.php' ?>
         <th scope="col">Giá</th>
         <th scope="col">Số Lượng</th>
         <th scope="col">Thành Tiền</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>';
@@ -38,8 +37,11 @@ include 'head.php' ?>
         <td>'.$row['TenSP'].'</td>
         <td><img src="img/'.$row['anh'].'" style="height:50px"></td>
         <td>'.number_format($row['Gia']).'</td>
-        <td>'.$row['SoLuong'].'</td>
+        <td>
+        <a href="themgiohang.php?id='.$row['MaSP'].'&sl=-1&loai=add" style="text-decoration: none">-</a>'.$row['SoLuong'].'
+        <a href="themgiohang.php?id='.$row['MaSP'].'&sl=1&loai=add" style="text-decoration: none">+</a></td>
         <td>'.number_format($row['Gia']*$row['SoLuong']).'</td>
+        <th scope="row"><a href="themgiohang.php?id='.$row['MaSP'].'&loai=delete">Xóa</a></th>
       </tr>';
       }
     }
