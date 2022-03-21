@@ -16,7 +16,7 @@ if(isset($_POST["submit"])) {
     $result=mysqli_query($conn, $sql);
     echo $file_name;
     if(copy($file_tmp,'img/'.$file_name.'')){
-        echo 'Đăng Sản Phẩm Thành Công';
+        echo 'Đăng Sản Phẩm Thành Công <br> <a class="back" href="home_admin.php"> Trở Về </a>';
     };
 }else {
     echo 'Có Lỗi Xảy Ra';
