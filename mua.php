@@ -92,11 +92,6 @@ include 'head.php' ?>
 
 
 <!-- footer -->
-
-<div class="border-top shadow text-center" style="height:300px; margin-top:100px; background-color:lightgrey">
-    <h2 style="margin:50px">Nhóm 14-61TH1 Hân hạnh đồng hành!</h2>
-    <h5 style="margin:50px">BTL Công nghệ phần mềm</h5>
-</div>
 <script>
 $('#mua').click(function() {$.ajax({
         type: "GET",

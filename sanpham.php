@@ -20,16 +20,19 @@ include 'head.php' ?>
                                 <h3 class="category__heading"> Danh Mục</h3>
                                 <ul class="category-list">
                                     <li class="category-item category-item--active">
-                                        <a href="#" class="category-item__link">Áo Quần Mùa Hè</a>
+                                        <a href="#" class="category-item__link">Tất Cả Sản Phẩm</a>
                                     </li>
                                     <li class="category-item">
                                         <a href="#" class="category-item__link">Áo Quần Mùa Đông</a>
                                     </li>
                                     <li class="category-item">
-                                        <a href="#" class="category-item__link">Áo Quần</a>
+                                        <a href="#" class="category-item__link">Áo Quần Mùa Hè</a>
                                     </li>
                                     <li class="category-item">
-                                        <a href="#" class="category-item__link">Áo Quần</a>
+                                        <a href="#" class="category-item__link">Mới</a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="#" class="category-item__link">Hot Sell</a>
                                     </li>
                                 </ul>
                             </nav>

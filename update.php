@@ -20,6 +20,12 @@
         <label class="form-label">loại:</label>
         <input type="text" class="form-control" name="loai">
 
+        <label class="form-label">Size:</label>
+        <input type="text" class="form-control" name="size">
+        
+        <label class="form-label">Màu Sắc:</label>
+        <input type="text" class="form-control" name="mau">
+
         <label class="form-label">giá bán:</label>
         <input type="number" class="form-control" name="gia">
 

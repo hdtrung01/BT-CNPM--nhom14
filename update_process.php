@@ -4,6 +4,8 @@ if(isset($_POST["submit"])) {
     $file_name = $_FILES['anh']['name'];
     $tensanpham=$_POST['tensanpham'];
     $masanpham=$_POST['masanpham'];
+    $Size=$_POST['size'];
+    $Mau=$_POST['mau'];
     $gia=$_POST['gia'];
     $loai=$_POST['loai'];
     $mota=$_POST['mota'];
@@ -12,7 +14,7 @@ if(isset($_POST["submit"])) {
         die("Ko ket noi duoc");
     }
 
-    $sql="INSERT INTO sanpham(MaSP,TenSP,LoaiSP,Gia,anh,mota) VALUES ('$masanpham','$tensanpham', '$loai', '$gia','$file_name','$mota')";
+    $sql="INSERT INTO sanpham(MaSP,TenSP,LoaiSP,Size,Mau,Gia,anh,mota) VALUES ('$masanpham','$tensanpham', '$loai','$Size','$Mau', '$gia','$file_name','$mota')";
     $result=mysqli_query($conn, $sql);
     echo $file_name;
     if(copy($file_tmp,'img/'.$file_name.'')){
