@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 16, 2022 at 09:35 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th3 22, 2022 lúc 08:38 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shop`
+-- Cơ sở dữ liệu: `shop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `giohang`
+-- Cấu trúc bảng cho bảng `giohang`
 --
 
 CREATE TABLE `giohang` (
@@ -34,7 +34,7 @@ CREATE TABLE `giohang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `giohang`
+-- Đang đổ dữ liệu cho bảng `giohang`
 --
 
 INSERT INTO `giohang` (`username`, `MaSP`, `SoLuong`) VALUES
@@ -53,33 +53,56 @@ INSERT INTO `giohang` (`username`, `MaSP`, `SoLuong`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sanpham`
+-- Cấu trúc bảng cho bảng `sanpham`
 --
 
 CREATE TABLE `sanpham` (
-  `MaSP` varchar(5) NOT NULL,
-  `TenSP` varchar(100) NOT NULL,
-  `LoaiSP` varchar(1000) NOT NULL,
+  `MaSP` varchar(5) CHARACTER SET utf8 NOT NULL,
+  `TenSP` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `LoaiSP` varchar(1000) CHARACTER SET utf8 NOT NULL,
+  `Size` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `Mau` varchar(20) CHARACTER SET utf8 NOT NULL,
   `Gia` int(11) NOT NULL,
   `anh` text NOT NULL,
   `mota` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `sanpham`
+-- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
-INSERT INTO `sanpham` (`MaSP`, `TenSP`, `LoaiSP`, `Gia`, `anh`, `mota`) VALUES
-('qưeqw', 'ao khoac simple', 'ádasd', 119084914, 'download.jpg', 'ád'),
-('sp001', 'Hoodie dirty coin', 'ao', 600000, '1.png', ''),
-('sp002', 'Hoodie dirty coin xanh', 'ao', 600000, '2.png', ''),
-('sp003', 'Hoodie dirty coin đỏ', 'ao', 600000, '3.png', ''),
-('sp004', 'cadigan dirtycoin', 'ao', 490000, '4.png', '');
+INSERT INTO `sanpham` (`MaSP`, `TenSP`, `LoaiSP`, `Size`, `Mau`, `Gia`, `anh`, `mota`) VALUES
+('sp001', 'Hoodie dirty coin', 'Quần áo mùa đông', 'XL', 'Trắng', 600000, '1.png', ''),
+('sp002', 'Hoodie dirty coin xanh', 'Quần áo mùa đông', 'XL', 'Xanh', 600000, '2.png', ''),
+('sp003', 'Hoodie dirty coin đỏ', 'Quần áo mùa đông', 'XL', 'Đỏ', 600000, '3.png', ''),
+('sp004', 'cadigan dirtycoin', 'Quần áo mùa đông', 'XL', 'Trắng', 490000, '4.png', ''),
+('sp005', 'Đầm Xuông Tay Bèo', 'Quần áo mùa hè', 'XL', 'Đỏ', 500000, 'sp1.png', 'Siêu đẹp'),
+('sp006', 'Áo Sơ My Tay Bồng', 'Quần áo mùa hè', 'X', 'Đỏ', 300000, 'sp2.png', 'Rất là phong cách'),
+('sp007', 'Chân Váy Bò', 'Quần áo mùa hè', 'XL', 'Xanh', 700000, 'sp3.png', 'Phong cách trẻ '),
+('sp008', 'Đầm Xuông Tay Bèo', 'Quần áo mùa hè', 'X', 'Hồng', 600000, 'sp4.png', 'Trẻ trung'),
+('sp009', 'Quần Jeans nữ', 'Quần áo mùa hè', 'X', 'Xanh', 300000, 'sp5.png', 'phù hợp mọi lứa tuổi'),
+('sp011', 'Đầm Chiffon Dập Ly', 'Quần áo mùa hè', 'XL', 'Đen', 600000, 'sp7.png', 'Sản phẩm mới của shop'),
+('sp012', 'Đầm Xuông Tay Bèo', 'Quần áo mùa hè', 'X', 'Trắng', 300000, 'sp8.png', 'Đẹp'),
+('sp013', 'Đầm Xèo Xếp Tầng', 'Quần áo mùa hè', 'L', 'Trắng', 900000, 'sp9.png', 'Đẹp '),
+('sp010', 'Đầm Lụa Đuôi Cá', 'Quần áo mùa hè', 'L', 'Đỏ', 600000, 'sp6.png', 'Siêu Đẹp'),
+('sp014', 'Áo Măng Tô Kẻ', 'Quần áo mùa đông', 'XL', 'Xám', 850000, 'sp10.png', 'Thích hợp đi hội'),
+('sp015', 'Áo Khoác Dạ Dáng Dài', 'Quần áo mùa đông', 'XXL', 'Đen', 95000, 'sp11.png', 'Đẹp'),
+('sp016', 'Áo Khoác Dáng Dài', 'Quần áo mùa đông', 'XXL', 'Đen', 950000, 'sp12.png', 'Chất Liệu Siêu Bền'),
+('sp017', 'Áo Khoác Len Viền Màu', 'Quần áo mùa đông', 'XXL', 'Đen', 700000, 'sp13.png', 'Hợp Thời Trang'),
+('sp018', 'Trench Coat Dáng Dài', 'Quần áo mùa đông', 'XXL', 'Hồng', 1200000, 'sp14.png', 'Chất Liệu Đẹp Hàng Hiệu Tiêu Chuẩn'),
+('sp019', 'Trench Coat Dáng Dài', 'Quần áo mùa đông', 'XL', 'Lục', 1200000, 'sp15.png', 'Siêu Bền'),
+('sp020', 'Áo Khoác Dạ Dáng Vest', 'Quần áo mùa đông', 'X', 'Hồng', 1000000, 'sp16.png', 'Giá Đẹp'),
+('sp021', 'Áo Khoác Thun ', 'Quần áo mùa đông', 'XXL', 'Nâu', 420000, 'sp17.png', 'Đẹp'),
+('sp022', 'Men Tweed Bomber Jacket', 'Quần áo mùa đông', 'XL', 'Đen', 800000, 'sp18.png', 'Đẹp'),
+('sp023', 'Áo Khoác Gió', 'Quần áo mùa đông', 'X', 'Đen', 600000, 'sp19.png', 'Siêu Mềm'),
+('sp024', 'Áo Khoác Kẻ', 'Quần áo mùa đông', 'XL', 'Đen', 500000, 'sp20.png', 'Hợp Phong Cách'),
+('sp025', 'Áo Khoác Kẻ', 'Quần áo mùa đông', 'XXL', 'Đỏ', 500000, 'sp21.png', 'Bền Đẹp'),
+('sp026', 'Áo Khoác Cổ Đức', 'Quần áo mùa đông', 'XXL', 'Xanh', 600000, 'sp22.png', 'Đẹp Bền');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -90,7 +113,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`username`, `Password`, `Email`, `permission`) VALUES
@@ -100,22 +123,6 @@ INSERT INTO `user` (`username`, `Password`, `Email`, `permission`) VALUES
 ('hai123', '70a0f9894d2df18c2507d231a94caee8', 'hai123', 0),
 ('simple', '202cb962ac59075b964b07152d234b70', 'simple@gmail.com', 0),
 ('thnagcho147c', '70a0f9894d2df18c2507d231a94caee8', 'hai123', 0);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `sanpham`
---
-ALTER TABLE `sanpham`
-  ADD PRIMARY KEY (`MaSP`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
