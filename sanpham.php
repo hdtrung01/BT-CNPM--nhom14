@@ -57,20 +57,6 @@ include 'head.php' ?>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="home-filter__page">
-                                    <span class="home-filter__page-number">
-                                        <span class="home-filter__page-current">1</span>/14
-                                    </span>
-                                        <div class="home-filter__page-control">
-                                            <a href="" class="home-filter__page-btn home-filter__page-btn-disabled">
-                                                <i class="home-filter__page-icon fa-solid fa-angle-left"></i>
-                                            </a>
-                                            <a href="" class="home-filter__page-btn">
-                                                <i class="home-filter__page-icon fa-solid fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    
-                                </div>
                             </div>
                             <div class="home-product">
                                 <div class="grid__row">

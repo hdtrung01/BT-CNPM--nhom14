@@ -16,77 +16,35 @@ include 'head.php' ?>
   $result=mysqli_query($conn, $sql);
 ?>
 <!-- poster -->
-<style>
-  .pt{
-    height: 400px;
-    width: 90%;
-    background: url(img/post1.png);
-    margin: 0 auto;
-    margin-top:20px;
-    animation: slide 25s infinite;
-}
-@keyframes slide {
-    25%{
-       background: url(img/post1.png);
-    }
-    50%{
-        background: url(img/post2.png);
-    }
-    75%{
-        background: url(img/poster.png);
-    }
-   100%{
-       background: url(img/post3.png);
-   }
-}
-.sanpham{
-  margin: 50px;
-  color:red;
-}
-.card{
-  width:20%;
-  margin:30px;
-  float:left;
-}
-.timkiem{
-  margin-left:20%;
-  margin-right:20%;
-  margin-top:70px;
-}
-.clearfix {
-  content: "";
-  clear: both;
-  display: table;
-}
-</style>
 <!-- Slide -->
-
-
 <!-- Danh sach sach' -->
-<h3 class="sanpham">Sản Phẩm:</h3>
-  <?php
-    if (mysqli_num_rows($result)>0){
-      while ($row=mysqli_fetch_assoc($result)){
-	echo '<div class="container">
-	  <div class="row">
-	  <div class="col">;
-	  <img src="img/'.$row['anh'].'" style="height:500px">;
-	  </div>
- 	  <div class="col">
-	  <h5 class="card-title">'.$row['TenSP'].'</h5>
-	  <div style="color:#ee4d2d;font-size:50px;">'.$row['Gia'].'</div>
-    <a>Số Lượng</a>
-    <input type="number" id="quantity" name="quantity" min="1" max="20" value="1">
-	  </br>
-    </br>
-	  <a id = "mua" class="btn btn-success" >Mua ngay</a>
-	  <a class="btn btn-primary" id = "add" >Thêm vào giỏ hàng</a>
-	  </div>
-	  </div></div>';
-      }
-    }
+    <?php
+        if (mysqli_num_rows($result)>0){
+          while ($row=mysqli_fetch_assoc($result)){
+      echo '<div class="container" style="border: 2px solid var(--border-color);">
+        <div class="row">
+        <div class="col">;
+        <img src="img/'.$row['anh'].'" style="height:500px">;
+        </div>
+        <div class="col">
+        <h5 class="card-title">'.$row['TenSP'].'</h5>
+        <div style="margin:5px;font-size:20px;">Mã Sản Phẩm:&ensp;'.$row['MaSP'].'</div>
+        <div style="margin:5px;color:#ee4d2d;font-size:50px;">'.$row['Gia'].'</div>
+        <div style="margin:5px;font-size:20px;">Loại:&ensp;'.$row['LoaiSP'].'</div>
+        <div style="margin:5px;font-size:20px;">Size:&ensp;'.$row['Size'].'</div>
+        <div style="margin:5px;font-size:20px;">Màu:&ensp;'.$row['Mau'].'</div>
+        <div style="Width: 500px;height:30px;font-size:18px;margin-bottom:5px">'.$row['mota'].'</div>
+        <a>Số Lượng</a>
+        <input type="number" id="quantity" name="quantity" min="1" max="20" value="1">
+        </br>
+        </br>
+        <a id = "mua" class="btn btn-success" >Mua ngay</a>
+        <a class="btn btn-primary" id = "add" >Thêm vào giỏ hàng</a>
+        </div>
+        </div></div>';
+          }
+        }
     ?>
-</div>
 
 <div class="clearfix"></div>
 
