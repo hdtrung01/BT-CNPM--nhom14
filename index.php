@@ -66,7 +66,7 @@ require_once 'head.php';
 </div>
 <!-- Danh sach sach' -->
     <div class="khung_hot">
-      <h3 class="sanpham">Hot Sell:</h3>
+      <h3 class="sanpham">Supper Hot:</h3>
         <?php
           if (mysqli_num_rows($result)>0){
             while ($row=mysqli_fetch_assoc($result)){
