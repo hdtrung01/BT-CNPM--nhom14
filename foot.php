@@ -12,7 +12,7 @@
                                 <a href="" class="footer-item__link">Trung Tâm Trợ Giúp</a>
                             </li>    
                             <li class="footer-item">
-                                <a href="" class="footer-item__link">Hướng Dẫn Chọn Size</a>
+                                <a href="helpsize.php" class="footer-item__link">Hướng Dẫn Chọn Size</a>
                             </li>    
                             <li class="footer-item">
                                 <a href="" class="footer-item__link">Hướng Dẫn Mua Hàng</a>
