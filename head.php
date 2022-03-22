@@ -137,12 +137,22 @@
 
                 <div class="header_4">
                    <div class="timkiem_1">
-                       <form class="timkiem_1 d-flex" action="user/timKiem.php" method = "POST">
-                        <input class="form-control me-2" type="text" name="timkiem" placeholder="Tìm kiếm sản phẩm: ">
+                       <form class="timkiem_1 d-flex" action="sanpham.php" method = "GET">
+                        <input class="form-control me-2" type="text" name="search" placeholder="Tìm kiếm sản phẩm: " list="sanpham" value = <?php if (isset($_GET['search'])) {
+                            echo $_GET['search'];
+                        }?>>
+                            <datalist id="sanpham">
+                            <option value="Boston">
+                            <option value="Cambridge">
+                            </datalist>
                         <button class="btn btn-primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                        </form>
                      </div>
                   </div>
-                </div>          
+                </div>
    </div>
 </nav>
+
+<script>
+    document.getElementById('sanpham').innerHTML = '</option><option value="Áo"></option>'
+</script>
