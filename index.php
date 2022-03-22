@@ -64,7 +64,7 @@ require_once 'head.php';
 <!-- Slide -->
 <div class="pt">
 </div>
-<!-- Danh sach sach' -->
+<!-- Danh sach sp' -->
     <div class="khung_hot">
       <h3 class="sanpham">Supper Hot:</h3>
         <?php
