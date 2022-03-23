@@ -85,8 +85,6 @@ require_once 'head.php';
 </div>
 
 <div class="clearfix"></div>
-
-
 <!-- footer -->
 </div>
 <?php include 'foot.php' ?>
