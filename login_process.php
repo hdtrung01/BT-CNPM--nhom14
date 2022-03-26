@@ -24,7 +24,7 @@
         if ($row['permission']){
             header("Location:home_admin.php");
         }else{
-            header("Location:home_user.php");
+            header("Location:index.php");
         }
     }else{
         echo '<div style="text-align:center">';
