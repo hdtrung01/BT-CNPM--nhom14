@@ -14,8 +14,9 @@ session_start();
 ?>
 <!-- poster -->
 <!-- Slide -->
-<div class="giohang_body" style = "margin: 100px">
-  <h3 class="sanpham">Sản Phẩm:</h3>
+
+<div class="giohang_body" style = "margin: 100px;">
+  <h3 class="sanpham">Giỏ Hàng:</h3>
     <?php
     echo '<table class="table">
     <thead>
@@ -23,9 +24,9 @@ session_start();
         <th scope="col"></th>
         <th scope="col">Sản Phẩm</th>
         <th scope="col"></th>
-        <th scope="col">Giá</th>
+        <th scope="col">Giá(VNĐ)</th>
         <th scope="col">Số Lượng</th>
-        <th scope="col">Thành Tiền</th>
+        <th scope="col">Thành Tiền(VNĐ)</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -38,21 +39,28 @@ session_start();
         <td><img src="img/'.$row['anh'].'" style="height:50px"></td>
         <td>'.number_format($row['Gia']).'</td>
         <td>
-        <a href="themgiohang.php?id='.$row['MaSP'].'&sl=-1&loai=add" style="text-decoration: none">-</a>'.$row['SoLuong'].'
-        <a href="themgiohang.php?id='.$row['MaSP'].'&sl=1&loai=add" style="text-decoration: none">+</a></td>
+        <a href="themgiohang.php?id='.$row['MaSP'].'&sl=-1&loai=add" style="text-decoration: none;color: #000">-</a>&nbsp;'.$row['SoLuong'].'&nbsp;
+        <a href="themgiohang.php?id='.$row['MaSP'].'&sl=1&loai=add" style="text-decoration: none;color: #000">+</a></td>
         <td>'.number_format($row['Gia']*$row['SoLuong']).'</td>
-        <th scope="row"><a href="themgiohang.php?id='.$row['MaSP'].'&loai=delete">Xóa</a></th>
+        <th scope="row"><a href="themgiohang.php?id='.$row['MaSP'].'&loai=delete" style="text-decoration: none;color: #000">Xóa</a></th>
       </tr>';
       }
     }
     echo '    </tbody>
     </table>';
     ?>
+        <div class="btn-foot">
+          <div class="btn-foot_button">
+            <a href="sanpham.php"class="btn-foot_1">Chọn Thêm</a>
+            <a href="dathang.php"class="btn-foot_2">Đặt Hàng</a>
+          </div>
+          <div class="btn-foot_tongtien">
+            <td class="sum-money">Tổng tiền:</td>
+            <td>2000000</td>
+            <td>(VNĐ)</td>
+          </div>
+        </div>
 </div>
-
-<div class="clearfix"></div>
-
-
 <!-- footer -->
 <script>
 $('#add').click(function() {$.ajax({
