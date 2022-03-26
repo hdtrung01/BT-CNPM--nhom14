@@ -731,6 +731,10 @@ i.home-product-item__Like-icon-yes{
     font-size: 14px;
     display: block;
     line-height: 1.42857143;
+    
+}
+.lienhe_control-1{
+    margin-bottom: 10px;
 }
 .btn_lienhe{
     background-color: var(--primary-color);
@@ -811,4 +815,44 @@ i.home-product-item__Like-icon-yes{
 }
 .header__navbar-user-item a:hover{
     color: var(--primary-color);
+}
+/* giohang */
+.btn-foot{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+.btn-foot_1{
+    background-color:var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px;
+    margin: 20px 10px;
+}
+.btn-foot_2{
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 3px;
+    margin: 20px 10px;
+}
+.btn-foot_tongtien{
+    font-size: 20px;
+    font-weight: 500;
+}
+.radio_ck:click() .radio-check{
+    display: block;
+}
+.radio-check{
+    display: none;
 }
