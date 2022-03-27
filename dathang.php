@@ -1,4 +1,16 @@
-<?php include 'head.php' ?>
+<?php 
+ session_start();
+require_once 'head.php';
+  ?>
+<?php
+  $conn = mysqli_connect('localhost','root','','shop');
+  if (!$conn){
+      die("Ko ket noi duoc");
+  }
+
+  $sql="SELECT * FROM sanpham";
+  $result=mysqli_query($conn, $sql);
+?>
     <div class="lienhe_row">
         <div class="lienhe_btn">
             <div class="lienhe_btn-1">
@@ -48,11 +60,6 @@
         <div class="lienhe_text">
             <h1>Chọn Phương Thức Thanh Toán</h1><br>
                 <div class="radio_thanhtoan">
-                    <p><input type="radio" name="phuongthuctt" value="ck" class="radio_ck"> Chuyển khoản</p>
-                        <div class="radio-check">
-                        <input type="radio" name="phuongthuctt" value="ck" class="radio_Momo"> Chuyển khoản
-                        <input type="radio" name="phuongthuctt" value="ck" class="radio_Zalo"> Chuyển khoản
-                        </div>
                     <p><input type="radio" name="phuongthuctt" value="khinhan"> Khi nhận hàng</p>
                 </div>
             <h2>Chọn Phương Thức Giao Hàng</h2>

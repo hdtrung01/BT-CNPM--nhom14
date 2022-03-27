@@ -17,7 +17,7 @@ include 'head.php' ?>
 ?>
 <!-- poster -->
 <!-- Slide -->
-<!-- Danh sach sach' -->
+  <a href="sanpham.php" class="back" style="margin-left: 50px;">Trở Về</a>
     <?php
         if (mysqli_num_rows($result)>0){
           while ($row=mysqli_fetch_assoc($result)){

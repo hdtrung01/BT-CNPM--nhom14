@@ -1,4 +1,5 @@
 <?php include 'head.php' ?>
+    <div class="sanpham" style="align-items: center;text-align: center;">Xin Lỗi Quý Khách Hệ Thống Liên Hệ Chúng Tôi Đã Xảy ra Lỗi. Chúng Tôi Đang Khắc Phục Sự Cố</div>
     <div class="lienhe_row">
         <div class="lienhe_btn">
             <div class="lienhe_btn-1">
@@ -88,74 +89,16 @@
                 <a href="https://www.gps.ie/marine-gps/">shipping gps</a>
             </iframe>
         </div>
-<?php
-                        if(isset($_POST['email'])) {
-                        $email_to = "nhokcunpvp@gmail.com";
-                        
-                        
-                        function died($error) {
-                        echo "Lỗi Biểu Mẫu";
-                        echo "Bạn Gặp Lỗi.<br /><br />";
-                        echo $error."<br /><br />";
-                        echo "Vui Lòng Thử Lại.<br /><br />";
-                        die();
-                        }
-                        
-                        // validation expected data exists
-                        if(!isset($_POST['name']) ||
-                        !isset($_POST['address']) ||
-                        !isset($_POST['phone']) ||
-                        !isset($_POST['email']))
-                        !isset($_POST['content']) ||
-                        $email_subject = $_POST['title'];
-                        $name = $_POST['name'];
-                        $address = $_POST['address'];
-                        $phone = $_POST['phone'];
-                        $email = $_POST['email'];
-                        $content = $_POST['content'];
-                        
-                        $error_message = "";
-                        $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
-                        if(!preg_match($email_exp,$email)) {
-                        $error_message .= ' Địa chỉ email không hợp lệ.<br />';
-                        }
-                        $string_exp = "/^[A-Za-z .'-]+$/";
-                        if(!preg_match($string_exp,$email_subject)) {
-                        $error_message .= 'tiêu Đề Không Hợp Lệ.<br />';
-                        }
-                        if(!preg_match($string_exp,$name)) {
-                        $error_message .= 'Tên Bạn Nhập Không Hợp Lệ.<br />';
-                        }
-                        if(!preg_match($string_exp,$address)) {
-                            $error_message .= 'Địa Chỉ Bạn Nhập Không Hợp Lệ.<br />';
-                            }
-                        if(strlen($content) < 2) {
-                        $error_message .= 'Nội Dung không hợp lệ.<br />';
-                        }
-                        if(strlen($error_message) > 0) {
-                        died($error_message);
-                        }
-                        $email_message = "Chi Tiết.\n\n";
-                        
-                        function clean_string($string) {
-                        $bad = array("content-type","bcc:","to:","cc:","href");
-                        return str_replace($bad,"",$string);
-                        }
-                        
-                        $email_message .= "title: ".clean_string($title)."\n";
-                        $email_message .= "Name: ".clean_string($name)."\n";
-                        $email_message .= "Address: ".clean_string($address)."\n";
-                        $email_message .= "Telephone: ".clean_string($phone)."\n";
-                        $email_message .= "Email: ".clean_string($email)."\n";
-                        $email_message .= "Comments: ".clean_string($content)."\n";
-                        
-                        $headers = 'From: '.$email_from."\r\n".
-                        'Reply-To: '.$email_from."\r\n" .
-                        'X-Mailer: PHP/' . phpversion();
-                        @mail($email_to, $email_subject, $email_message, $headers);
-    ?> -->
-  
-        <?php
-                        }
-     ?>
+        <style>
+             .sanpham{
+      margin: 20px;
+      color:red;
+      font-size:24px;
+      font-weight:bold;
+      -webkit-animation: my 700ms infinite;
+      -moz-animation: my 700ms infinite; 
+      -o-animation: my 700ms infinite; 
+      animation: my 700ms infinite;
+    }
+        </style>
 <?php include 'foot.php' ?>

@@ -103,7 +103,7 @@
                         <div class="header_2">
                           <a href="sanpham.php" class="header_2-link">Sản Phẩm</a>
                           <a href="helpsize.php" class="header_2-link">Hướng Dẫn Chọn Size</a>
-                          <a href="lienhe.php" class="header_2-link">Liên Hệ</a>
+                          <a href="lienhe.php" class="header_2-link"><del>Liên Hệ</del> (Đang Bảo Trì)</a>
                         </div>   
                         <div class="header_3">
                           <form class="d-flex">

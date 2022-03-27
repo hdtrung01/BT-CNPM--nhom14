@@ -51,9 +51,37 @@ include 'head.php' ?>
                         </div>
                         <div class="grid__column-10">
                             <div class="home-filter">
-                                <span class="home-filter__label">Sắp Sếp Theo</span>
-                                <button class="home-filter__btn btn_1 btn--primary">Phổ Biến</button>
-                                <button class="home-filter__btn btn_1">Mới Nhất</button>
+                                <span class="home-filter__label">Tìm Kiếm Theo</span>
+                                <button class="home-filter__btn btn_1"> <div class="select-input">
+                                    <span class="select-input__label">Màu</span>
+                                    <i class="select-input__icon fa-solid fa-angle-down"></i>
+                                    <ul class="select-input__list">
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=Trắng" class="select-input__link">Trắng</a>     
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Đen</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Đỏ</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Xanh</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Hồng</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Xám</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Lục</a>
+                                        </li>
+                                        <li class="select-input__item">
+                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Nâu</a>
+                                        </li>
+                                    </ul>
+                                </div></button>
                                 <button class="home-filter__btn btn_1"><div class="select-input">
                                     <span class="select-input__label">Size <?php echo $size?></span>
                                     <i class="select-input__icon fa-solid fa-angle-down"></i>
