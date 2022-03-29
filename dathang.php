@@ -1,16 +1,10 @@
 <?php 
  session_start();
+ if(!isset($_SESSION["username"])){
+    header("Location:./login.php");
+   }
 require_once 'head.php';
   ?>
-<?php
-  $conn = mysqli_connect('localhost','root','','shop');
-  if (!$conn){
-      die("Ko ket noi duoc");
-  }
-
-  $sql="SELECT * FROM sanpham";
-  $result=mysqli_query($conn, $sql);
-?>
     <div class="lienhe_row">
         <div class="lienhe_btn">
             <div class="lienhe_btn-1">
@@ -59,20 +53,34 @@ require_once 'head.php';
         </div>
         <div class="lienhe_text">
             <h1>Chọn Phương Thức Thanh Toán</h1><br>
-                <div class="radio_thanhtoan">
+                <div class="radio_thanhtoan" id = pttt>
                     <p><input type="radio" name="phuongthuctt" value="khinhan"> Khi nhận hàng</p>
                 </div>
             <h2>Chọn Phương Thức Giao Hàng</h2>
-            <div class="form-group row">
-                <p><input type="radio" name="phuongthuctt" value="ghnhanh"> Giao hàng nhanh</p>
-                <p><input type="radio" name="phuongthuctt" value="ghtietkiem"> Giao hàng tiết kiệm</p>
-                <p><input type="radio" name="phuongthuctt" value="vnpost"> VN Post</p>
-                <p><input type="radio" name="phuongthuctt" value="viettel"> Viettel</p>
+            <div class="form-group row" id = pt_giao_hang>
+                <p><input type="radio" name="phuongthucgh" value="ghnhanh"> Giao hàng nhanh</p>
+                <p><input type="radio" name="phuongthucgh" value="ghtietkiem"> Giao hàng tiết kiệm</p>
+                <p><input type="radio" name="phuongthucgh" value="vnpost"> VN Post</p>
+                <p><input type="radio" name="phuongthucgh" value="viettel"> Viettel</p>
              </div>
         </div>
     </div>
      <div class="lienhe_btn-3">
             <a href="giohang.php"class="btn-foot_1">Trở Lại</a>
-            <a href="dathang.php"class="btn-foot_2">Xác Nhận</a>
+            <a onclick="XacNhan()"class="btn-foot_2">Xác Nhận</a>
      </div>
+     <script>
+         function XacNhan(){
+            $.ajax({
+                    type: "POST",
+                    url: "dathang_process.php",
+                    data:{ten:$("#name").val() , address:$("#address").val() , phone:$("#phone").val() , email:$("#email").val() , request:$("#content").val() , pttt:$("#pttt input[type='radio']:checked").val() , ptgh:$("#pt_giao_hang input[type='radio']:checked").val()} ,
+                    success: function(data, textStatus, xhr){
+                    if(xhr.status == 200){
+                    
+                    }
+                }
+            });
+         }
+     </script>
 <?php include 'foot.php' ?>

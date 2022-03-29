@@ -31,8 +31,10 @@ session_start();
       </tr>
     </thead>
     <tbody>';
+    $tong_tien = 0;
     if (mysqli_num_rows($result)>0){
       while ($row=mysqli_fetch_assoc($result)){
+        $tong_tien += $row['Gia']*$row['SoLuong'];
     echo '<tr>
         <th scope="row"></th>
         <td>'.$row['TenSP'].'</td>
@@ -56,7 +58,7 @@ session_start();
           </div>
           <div class="btn-foot_tongtien">
             <td class="sum-money">Tổng tiền:</td>
-            <td>2000000</td>
+            <td><?php echo number_format($tong_tien) ?></td>
             <td>(VNĐ)</td>
           </div>
         </div>

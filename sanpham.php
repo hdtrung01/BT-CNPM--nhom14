@@ -18,6 +18,9 @@ include 'head.php' ?>
     if(isset($_GET['search'])){
         $search = $_GET['search'];
         }else $search = '';
+    if(isset($_GET['Mau'])){
+        $mau = $_GET['Mau'];
+        }    
     $conn = mysqli_connect('localhost','root','','shop');
     if (!$conn){
         die("Ko ket noi duoc");
@@ -57,28 +60,28 @@ include 'head.php' ?>
                                     <i class="select-input__icon fa-solid fa-angle-down"></i>
                                     <ul class="select-input__list">
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=Trắng" class="select-input__link">Trắng</a>     
+                                            <a href="?category=<?php echo $category?>&Mau=Trắng" class="select-input__link">Trắng</a>     
                                         </li>
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Đen</a>
+                                            <a href="?category=<?php echo $category?>&Mau=Đen" class="select-input__link">Đen</a>
                                         </li>
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Đỏ</a>
+                                            <a href="?category=<?php echo $category?>&Mau=Đỏ" class="select-input__link">Đỏ</a>
                                         </li>
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Xanh</a>
+                                            <a href="?category=<?php echo $category?>&Mau=Xanh" class="select-input__link">Xanh</a>
                                         </li>
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Hồng</a>
+                                            <a href="?category=<?php echo $category?>&Mau=Hồng" class="select-input__link">Hồng</a>
                                         </li>
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Xám</a>
+                                            <a href="?category=<?php echo $category?>&Mau=Xám" class="select-input__link">Xám</a>
                                         </li>
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Lục</a>
+                                            <a href="?category=<?php echo $category?>&Mau=Lục" class="select-input__link">Lục</a>
                                         </li>
                                         <li class="select-input__item">
-                                            <a href="?search=<?php echo $search?>&category=<?php echo $category?>&Mau=DESC" class="select-input__link">Nâu</a>
+                                            <a href="?category=<?php echo $category?>&Mau=Nâu" class="select-input__link">Nâu</a>
                                         </li>
                                     </ul>
                                 </div></button>
@@ -154,6 +157,8 @@ include 'head.php' ?>
 
                                         if($gia != ''){
                                             $sql = "SELECT * FROM (".$sql.")sp ORDER BY Gia $gia LIMIT 10 OFFSET $item";
+                                        }else if(isset($_GET['Mau'])){
+                                            $sql = "SELECT * FROM (".$sql.")sp WHERE mau = '$mau' LIMIT 10 OFFSET $item";
                                         }else $sql = "SELECT * FROM (".$sql.")sp LIMIT 10 OFFSET $item";
                                         $result=mysqli_query($conn, $sql);
                                     if (mysqli_num_rows($result)>0){
@@ -203,6 +208,9 @@ include 'head.php' ?>
                                     $sql="select count(1) FROM sanpham WHERE true";
                                 }else{
                                     $sql="select count(1) FROM sanpham WHERE LoaiSP = '$category'";
+                                }
+                                if(isset($_GET['Mau'])){
+                                    $sql = $sql." AND mau = '$mau'";
                                 }
                                 if($size !='')$sql = $sql." AND size = '$size'";
                                 $result=mysqli_query($conn, $sql);
