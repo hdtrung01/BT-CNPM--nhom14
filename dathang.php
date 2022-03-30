@@ -77,7 +77,7 @@ require_once 'head.php';
                     data:{ten:$("#name").val() , address:$("#address").val() , phone:$("#phone").val() , email:$("#email").val() , request:$("#content").val() , pttt:$("#pttt input[type='radio']:checked").val() , ptgh:$("#pt_giao_hang input[type='radio']:checked").val()} ,
                     success: function(data, textStatus, xhr){
                     if(xhr.status == 200){
-                    
+                      window.location.href = 'donhang.php';
                     }
                 }
             });
