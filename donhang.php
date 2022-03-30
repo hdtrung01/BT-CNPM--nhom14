@@ -23,7 +23,9 @@ $username = $_SESSION["username"];
   <?php
     
   $tong_tien = 0;
-  $firstrow = mysqli_fetch_assoc($result);;
+  
+  if (mysqli_num_rows($result)>0){
+    $firstrow = mysqli_fetch_assoc($result);;
   $madh = $firstrow['MaDH'];
   echo '</tr><table class="table">
   <thead>
@@ -36,7 +38,6 @@ $username = $_SESSION["username"];
     </tr>
   </thead>
   <tbody>';
-  if (mysqli_num_rows($result)>0){
     while ($row=mysqli_fetch_assoc($result)){
       $tong_tien += $row['Gia']*$row['SoLuong'];
             if($row['MaDH'] != $madh){
@@ -83,16 +84,17 @@ $username = $_SESSION["username"];
       <td>'.number_format($row['Gia']*$row['SoLuong']).'</td>
     </tr>';
     }
+    echo '<tr>
+    <th scope="row"></th>
+    <td></td>
+    <td></td>
+    <td>Tổng Tiền:</td>
+    <td>'.number_format($tong_tien).'</td>    </tbody>
+    </table>Địa Chỉ : '.$address.'</br>
+    Đơn vị giao hàng : '.$dvgh.'</br>
+    Trạng thái đơn hàng : '.$status.' </br></br></br>';
   }
-  echo '<tr>
-  <th scope="row"></th>
-  <td></td>
-  <td></td>
-  <td>Tổng Tiền:</td>
-  <td>'.number_format($tong_tien).'</td>    </tbody>
-  </table>Địa Chỉ : '.$address.'</br>
-  Đơn vị giao hàng : '.$dvgh.'</br>
-  Trạng thái đơn hàng : '.$status.' </br></br></br>';
+
   ?>
 
     
