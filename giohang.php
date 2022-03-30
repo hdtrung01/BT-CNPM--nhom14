@@ -15,7 +15,7 @@ session_start();
 <!-- poster -->
 <!-- Slide -->
 
-<div class="giohang_body" style = "margin: 100px;">
+<div class="giohang_body" style= "margin: 100px;padding:20px 20px;border: 2px solid var(--border-color);">
   <h3 class="sanpham">Giỏ Hàng:</h3>
     <?php
     echo '<table class="table">
