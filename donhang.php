@@ -27,6 +27,7 @@ $username = $_SESSION["username"];
   if (mysqli_num_rows($result)>0){
     $firstrow = mysqli_fetch_assoc($result);;
   $madh = $firstrow['MaDH'];
+  $tong_tien = $firstrow['Gia']*$firstrow['SoLuong'];
   echo '</tr><table class="table">
   <thead>
     <tr>
@@ -38,8 +39,25 @@ $username = $_SESSION["username"];
     </tr>
   </thead>
   <tbody>';
+  $address = $firstrow['address'];
+            $dvgh = $firstrow['delivery'];
+            if ($firstrow['status'] == 0) {
+              $status = 'Đang xử lý';
+            }
+            if ($firstrow['status'] == 1) {
+              $status = 'Đang giao hàng';
+            }
+            if ($firstrow['status'] == 2) {
+              $status = 'Đã hoàn thành';
+            }
+  echo '<tr>
+      <th scope="row"></th>
+      <td>'.$firstrow['TenSP'].'</td>
+      <td>'.number_format($firstrow['Gia']).'</td>
+      <td>'.$firstrow['SoLuong'].'</td>
+      <td>'.number_format($firstrow['Gia']*$firstrow['SoLuong']).'</td>
+    </tr>';
     while ($row=mysqli_fetch_assoc($result)){
-      $tong_tien += $row['Gia']*$row['SoLuong'];
             if($row['MaDH'] != $madh){
               $madh = $row['MaDH'];
               echo '<tr>
@@ -65,6 +83,7 @@ $username = $_SESSION["username"];
               <tbody>';
               $tong_tien = $row['Gia']*$row['SoLuong'];
             }
+            $tong_tien += $row['Gia']*$row['SoLuong'];
             $address = $row['address'];
             $dvgh = $row['delivery'];
             if ($row['status'] == 0) {
